@@ -1,3 +1,4 @@
+#include "grid.h"
 #include <raylib.h>
 
 int main()
@@ -7,10 +8,14 @@ int main()
     InitWindow(300, 600, "Tetris");
     SetTargetFPS(60);
 
+    Grid grid = Grid();
+
     while (WindowShouldClose() == false) // checks for pressed ESC
     {
         BeginDrawing();
         ClearBackground(darkBlue);
+
+        grid.draw();
 
         EndDrawing();
     }
