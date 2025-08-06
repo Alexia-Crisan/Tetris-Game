@@ -1,3 +1,4 @@
+#include "blocks.cpp"
 #include "grid.h"
 #include <raylib.h>
 
@@ -10,12 +11,15 @@ int main()
 
     Grid grid = Grid();
 
+    LBlock block = LBlock();
+
     while (WindowShouldClose() == false) // checks for pressed ESC
     {
         BeginDrawing();
         ClearBackground(darkBlue);
 
         grid.draw();
+        block.draw();
 
         EndDrawing();
     }
