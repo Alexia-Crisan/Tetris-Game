@@ -9,23 +9,23 @@ private:
     std::vector<Block> blocks;
     Block currentBlock;
     Block nextBlock;
+    Grid grid;
     bool isBlockOutside();
     void rotateBlock();
     void lockBlock();
     bool blockFits();
     void reset();
-
-public:
-    Grid grid;
-    Game();
     Block getRandomBlock();
     std::vector<Block> getAllBlocks();
+    void moveBlockLeft();
+    void moveBlockRight();
+
+public:
+    Game();
     bool gameOver;
     int score;
     void draw();
     void handleInput();
-    void moveBlockLeft();
-    void moveBlockRight();
     void moveBlockDown();
     void updateScore(int linesCleared, int moveDownPoints);
 };
