@@ -1,5 +1,4 @@
-#include "blocks.cpp"
-#include "grid.h"
+#include "game.h"
 #include <raylib.h>
 
 int main()
@@ -9,17 +8,16 @@ int main()
     InitWindow(300, 600, "Tetris");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
-
-    TBlock block = TBlock();
+    Game game = Game();
 
     while (WindowShouldClose() == false) // checks for pressed ESC
     {
+        game.handleInput();
+
         BeginDrawing();
         ClearBackground(darkBlue);
 
-        grid.draw();
-        block.draw();
+        game.draw();
 
         EndDrawing();
     }
