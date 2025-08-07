@@ -69,7 +69,7 @@ void Game::moveBlockLeft()
 {
     currentBlock.move(0, -1);
 
-    if (isBlockOutside())
+    if (isBlockOutside() || blockFits() == false)
     {
         currentBlock.move(0, 1);
     }
@@ -79,7 +79,7 @@ void Game::moveBlockRight()
 {
     currentBlock.move(0, 1);
 
-    if (isBlockOutside())
+    if (isBlockOutside() || blockFits() == false)
     {
         currentBlock.move(0, -1);
     }
@@ -89,9 +89,10 @@ void Game::moveBlockDown()
 {
     currentBlock.move(1, 0);
 
-    if (isBlockOutside())
+    if (isBlockOutside() || blockFits() == false)
     {
         currentBlock.move(-1, 0);
+        lockBlock();
     }
 }
 
@@ -113,8 +114,36 @@ void Game::rotateBlock()
 {
     currentBlock.rotate();
 
-    if (isBlockOutside())
+    if (isBlockOutside() || blockFits() == false)
     {
         currentBlock.undoRotation();
     }
+}
+
+void Game::lockBlock()
+{
+    std::vector<Position> tiles = currentBlock.getCellPosition();
+
+    for (Position item : tiles)
+    {
+        grid.grid[item.row][item.column] = currentBlock.id;
+    }
+
+    currentBlock = nextBlock;
+    nextBlock = getRandomBlock();
+}
+
+bool Game::blockFits()
+{
+    std::vector<Position> tiles = currentBlock.getCellPosition();
+
+    for (Position item : tiles)
+    {
+        if (grid.isCellEmpty(item.row, item.column) == false)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }

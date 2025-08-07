@@ -18,4 +18,5 @@ public:
     void print();
     void draw();
     bool isCellOutside(int row, int column);
+    bool isCellEmpty(int row, int column);
 };
