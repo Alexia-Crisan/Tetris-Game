@@ -10,6 +10,8 @@ private:
     Block currentBlock;
     Block nextBlock;
     Grid grid;
+    Sound rotateSound;
+    Sound clearSound;
     bool isBlockOutside();
     void rotateBlock();
     void lockBlock();
@@ -22,8 +24,10 @@ private:
 
 public:
     Game();
+    ~Game();
     bool gameOver;
     int score;
+    Music music;
     void draw();
     void handleInput();
     void moveBlockDown();
