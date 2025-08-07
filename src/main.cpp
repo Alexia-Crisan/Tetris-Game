@@ -29,7 +29,7 @@ int main()
     {
         game.handleInput();
 
-        if (eventTriggered(0.2))
+        if (eventTriggered(0.02))
         {
             game.moveBlockDown();
         }

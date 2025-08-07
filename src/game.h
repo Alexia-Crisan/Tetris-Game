@@ -13,12 +13,14 @@ private:
     void rotateBlock();
     void lockBlock();
     bool blockFits();
+    void reset();
 
 public:
     Grid grid;
     Game();
     Block getRandomBlock();
     std::vector<Block> getAllBlocks();
+    bool gameOver;
     void draw();
     void handleInput();
     void moveBlockLeft();
