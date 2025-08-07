@@ -11,7 +11,7 @@ int main()
 
     Grid grid = Grid();
 
-    LBlock block = LBlock();
+    TBlock block = TBlock();
 
     while (WindowShouldClose() == false) // checks for pressed ESC
     {
