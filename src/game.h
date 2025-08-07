@@ -10,6 +10,7 @@ private:
     Block currentBlock;
     Block nextBlock;
     bool isBlockOutside();
+    void rotateBlock();
 
 public:
     Grid grid;
