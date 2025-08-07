@@ -21,9 +21,11 @@ public:
     Block getRandomBlock();
     std::vector<Block> getAllBlocks();
     bool gameOver;
+    int score;
     void draw();
     void handleInput();
     void moveBlockLeft();
     void moveBlockRight();
     void moveBlockDown();
+    void updateScore(int linesCleared, int moveDownPoints);
 };
