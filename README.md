@@ -18,7 +18,7 @@ Features a **scoring system**, **next piece preview**, and **vibrant colors and 
 
 ---
 
-## 🖼 Screenshot
+## Screenshot
 
 ![Tetris Screenshot](game_play.png)
 
